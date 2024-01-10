@@ -1,4 +1,4 @@
-
+# frozen_string_literal: true
 
 # This migration creates the 'comments' table in the database.
 # Each comment belongs to a user and a post, and it includes a text content,
