@@ -1,4 +1,4 @@
-# frozen_string_literal: true
+
 
 # Represents a comment made by a user on a post.
 class Comment < ApplicationRecord
