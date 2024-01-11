@@ -1,5 +1,3 @@
-# Unnecessary frozen string literal comment.
-
 source 'https://rubygems.org'
 
 ruby '3.1.4'
