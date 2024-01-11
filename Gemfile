@@ -1,4 +1,4 @@
-# frozen_string_literal: true
+# Unnecessary frozen string literal comment.
 
 source 'https://rubygems.org'
 
