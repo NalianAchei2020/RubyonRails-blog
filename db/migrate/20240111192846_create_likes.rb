@@ -3,8 +3,8 @@ class CreateLikes < ActiveRecord::Migration[7.1]
     create_table :likes do |t|
       t.references :user, null: false, foreign_key: true
       t.references :post, null: false, foreign_key: true
-      t.datetime :created_at
-      t.datetime :updated_at
+      t.datetime :createdAt
+      t.datetime :updatedAt
 
       t.timestamps
     end

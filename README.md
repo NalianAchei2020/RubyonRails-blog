@@ -14,7 +14,6 @@
   - [Install](#install)
   - [Usage](#usage)
   - [Run tests](#run-tests)
-  - [Deployment](#triangular_flag_on_post-deployment)
 - [👥 Authors](#authors)
 - [🔭 Future Features](#future-features)
 - [🤝 Contributing](#contributing)
@@ -130,12 +129,6 @@ To run tests, run the following command:
   rspec
 ```
 
-### Deployment
-
-- [N/A]
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 <!-- AUTHORS -->
 
 ## 👥 Authors <a name="authors"></a>
@@ -144,7 +137,6 @@ To run tests, run the following command:
 
 - Github: [@NalianAchei2020](https://github.com/NalianAchei2020)
 - Linkedin: [Nalian Achei](https://www.linkedin.com/in/nalian-achei-683208275)
-- Twitter: [@NalianAchei](https://twitter.com/NalianAchei?t=E3ePLcJ7B45dBa8SBFIXDg&s=09)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
