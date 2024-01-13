@@ -9,7 +9,7 @@ RSpec.describe Post, type: :model do
   it 'is invalid without a title' do
     post = Post.new(title: '', comments_counter: 2, likes_counter: 5)
     expect(post).to_not be_valid
-    expect(post.errors[:title]).to include('can not be blank')
+    expect(post.errors[:title]).to include('can\'t be blank')
   end
 
   it 'is invalid with a title exceeding 250 characters' do
