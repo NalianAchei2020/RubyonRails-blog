@@ -21,8 +21,8 @@ RSpec.describe Like, type: :model do
   end
 
   context '#update_likes_counter' do
-  before :all do
-8.times { Like.create(user: @user, post: @post, post_id: 1) }
-  end
+    before :all do
+      8.times { Like.create(user: @user, post: @post, post_id: 1) }
+    end
   end
 end

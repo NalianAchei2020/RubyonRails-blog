@@ -22,7 +22,7 @@ RSpec.describe Comment, type: :model do
 
   context '#update_comments_counter' do
     before :all do
-        8.times { |comment_i| Comment.create(user: @user, post: @post, text: (comment_i + 1).to_s, post_id: 1) }
+      8.times { |comment_i| Comment.create(user: @user, post: @post, text: (comment_i + 1).to_s, post_id: 1) }
     end
   end
 end
