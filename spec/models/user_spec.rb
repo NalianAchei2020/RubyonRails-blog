@@ -16,13 +16,13 @@ RSpec.describe User, type: :model do
     it 'is not valid with non-numeric posts_counter' do
       user = User.new(name: 'Tom', posts_counter: 'five')
       expect(user).to_not be_valid
-      expect(user.errors[:posts_counter]).to include("is not a number")
+      expect(user.errors[:posts_counter]).to include('is not a number')
     end
 
     it 'is not valid with negative posts_counter' do
       user = User.new(name: 'Tom', posts_counter: -1)
       expect(user).to_not be_valid
-      expect(user.errors[:posts_counter]).to include("must be greater than or equal to 0")
+      expect(user.errors[:posts_counter]).to include('must be greater than or equal to 0')
     end
 
     it 'is valid with zero posts_counter' do
