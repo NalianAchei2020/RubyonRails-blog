@@ -26,26 +26,27 @@ RSpec.describe User, type: :model do
     end
 
     it 'is valid with zero posts_counter' do
-      expect(User.create(name: 'Tom', posts_counter: 0)).to be_valid
+      expect(User.create(name: 'Abang', posts_counter: 0)).to be_valid
     end
 
     it 'is valid with positive posts_counter' do
-      expect(User.create(name: 'Tom', posts_counter: 5)).to be_valid
+      expect(User.create(name: 'Abang', posts_counter: 5)).to be_valid
     end
   end
 
   context '#recent_posts' do
     before :each do
-      @user = User.create(name: 'Tom')
+      @user = User.create(name: 'Abang')
       5.times { |i| @user.posts.build(title: "Post #{i + 1}") }
       @user.save
     end
 
     it 'returns the most recent posts' do
       recent_posts = @user.recent_posts
-      expected_count = 0
-      expect(recent_posts.count).to eq(expected_count)
-      expect(recent_posts).to eq(@user.posts.last(expected_count).reverse)
+      puts "User Posts: #{recent_posts.inspect}"
+      puts "SQL Query: #{recent_posts.to_sql}"
+      expect(recent_posts.count).to eq(3)
+      expect(recent_posts).to eq(@user.posts.last(3).reverse)
     end
   end
 end

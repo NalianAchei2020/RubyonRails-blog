@@ -4,11 +4,9 @@ class CreateUsers < ActiveRecord::Migration[7.1]
       t.string :name
       t.string :photo
       t.text :bio
-      t.datetime :updatedAt
-      t.datetime :createdAt
-      t.integer :posts_counter
-
+      t.integer :posts_counter, default: 0
       t.timestamps
     end
+    add_index :users, :name, unique: true
   end
 end
