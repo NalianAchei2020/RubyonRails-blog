@@ -37,7 +37,7 @@ RSpec.describe User, type: :model do
   context '#recent_posts' do
     before :each do
       @user = User.create(name: 'Tom')
-      5.times { |i| @user.posts.build(title: 'Post #{i + 1}') }
+      5.times { |i| @user.posts.build(title: "Post #{i + 1}") }
       @user.save
     end
 
