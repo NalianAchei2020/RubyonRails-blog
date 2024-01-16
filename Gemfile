@@ -8,6 +8,9 @@ gem 'rails', '~> 7.1.2'
 # for linters
 gem 'rubocop', '>= 1.0', '< 2.0'
 
+# rspec
+gem 'rspec-rails'
+
 # postgress
 gem 'pg'
 
