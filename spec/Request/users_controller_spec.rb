@@ -38,7 +38,7 @@ RSpec.describe UsersController, type: :controller do
       user = User.create(name: 'Nikita')
 
       # Perform the request
-      get :show, params: { id: user.id }
+      get :show, params: { id: 1 }
 
       # Expect the response status to be 200 (OK)
       expect(response).to have_http_status(200)
@@ -46,7 +46,7 @@ RSpec.describe UsersController, type: :controller do
 
     it 'renders the show template' do
       # Create a sample user
-      user = User.create(name: 'Nikita')
+      user = User.create(name: 'Tom')
 
       # Perform the request
       get :show, params: { id: user.id }
@@ -57,7 +57,7 @@ RSpec.describe UsersController, type: :controller do
 
     it 'assigns the correct user to @user' do
       # Create a sample user
-      user = User.create(name: 'Nikita')
+      user = User.create(name: 'Tom')
 
       # Perform the request
       get :show, params: { id: user.id }
