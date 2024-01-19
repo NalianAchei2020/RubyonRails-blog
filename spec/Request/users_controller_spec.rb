@@ -35,7 +35,7 @@ RSpec.describe UsersController, type: :controller do
   describe 'GET #show' do
     it 'returns a success response' do
       # Create a sample user
-      user = User.create(name: 'Nikita')
+      User.create(name: 'Nikita')
 
       # Perform the request
       get :show, params: { id: 1 }

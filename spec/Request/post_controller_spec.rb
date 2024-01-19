@@ -5,8 +5,8 @@ RSpec.describe PostsController, type: :controller do
   describe 'GET #index' do
     it 'returns a success response' do
       user = User.create(name: 'Ngoh')
-      post1 = user.posts.create(title: 'Post 1')
-      post2 = user.posts.create(title: 'Post 2')
+      user.posts.create(title: 'Post 1')
+      user.posts.create(title: 'Post 2')
 
       get :index, params: { user_id: user.id }
 
