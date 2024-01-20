@@ -1,6 +1,9 @@
+<h1>List of posts for a User</h1>
+
 <h1>User Details</h1>
-<!-- Display relevant information about @user -->
-<p>Name: <%= @user.name %></p>
-<p>Email: <%= @user.email %></p>
-<!-- Link to view all posts by the user -->
-<p><%= link_to "View all posts by this user", user_posts_path(@user) %></p>
+
+<h2><%= @user.name %></h2>
+<p><%= @user.bio %></p>
+
+<%= link_to "Back to Users", users_path %>
+<%= link_to "View All Posts", user_posts_path(@user) %>

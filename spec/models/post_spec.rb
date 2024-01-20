@@ -1,7 +1,7 @@
 require 'rails_helper'
 RSpec.describe Post, type: :model do
   it 'is valid with a title, comments_counter, and likes_counter' do
-    user = User.create(name: 'John Doe') # Create a valid User instance
+    user = User.create(name: 'Macus') # Create a valid User instance
     post = Post.new(title: 'Sample Post', comments_counter: 2, likes_counter: 5, author: user)
     expect(post).to be_valid
   end

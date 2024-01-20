@@ -11,6 +11,8 @@ gem 'rubocop', '>= 1.0', '< 2.0'
 # rspec
 gem 'rspec-rails'
 
+gem 'rails-controller-testing'
+
 # postgress
 gem 'pg'
 
