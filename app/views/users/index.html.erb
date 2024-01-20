@@ -1,5 +1,8 @@
 <h1>All Users</h1>
-<!-- Iterate over @users and display relevant information -->
+
 <% @users.each do |user| %>
-  <p><%= link_to user.name, user_path(user) %></p>
+  <div>
+    <h2><%= user.name %></h2>
+    <p><%= link_to "View Details", user_path(user) %></p>
+  </div>
 <% end %>

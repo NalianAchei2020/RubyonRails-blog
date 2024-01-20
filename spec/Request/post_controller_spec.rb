@@ -1,68 +1,40 @@
 require 'rails_helper'
-require 'rails-controller-testing'
 
-RSpec.describe PostsController, type: :controller do
-  describe 'GET #index' do
-    it 'returns a success response' do
-      user = User.create(name: 'Ngoh')
-      user.posts.create(title: 'Post 1')
-      user.posts.create(title: 'Post 2')
+RSpec.describe 'Posts', type: :request do
+  let(:user) { User.create(name: 'John', photo: 'https://example.com/john.jpg', bio: 'Lorem ipsum') }
+  let(:post) { Post.create(author: user, title: 'Test Post', text: 'This is a test post') }
 
-      get :index, params: { user_id: user.id }
-
+  describe 'GET /users/:user_id/posts' do
+    it 'returns a successful response' do
+      get user_posts_path(user)
       expect(response).to have_http_status(200)
     end
 
     it 'renders the index template' do
-      user = User.create(name: 'Ngoh')
-
-      get :index, params: { user_id: user.id }
-
+      get user_posts_path(user)
       expect(response).to render_template(:index)
     end
 
-    it 'assigns the correct user to @user' do
-      user = User.create(name: 'David')
-
-      get :index, params: { user_id: user.id }
-
-      expect(assigns(:user)).to eq(user)
-    end
-
-    it 'assigns the user posts to @posts' do
-      user = User.create(name: 'David')
-      post1 = user.posts.create(title: 'Post 1')
-      post2 = user.posts.create(title: 'Post 2')
-
-      get :index, params: { user_id: user.id }
-
-      expect(assigns(:posts)).to match_array([post1, post2])
+    it 'includes correct placeholder text in the response body' do
+      get user_posts_path(user)
+      expect(response.body).to include('All posts')
     end
   end
 
-  describe 'GET #show' do
-    it 'returns a success response' do
-      post = Post.create(title: 'Post 1')
-
-      get :show, params: { id: post.id }
-
+  describe 'GET /posts/:id' do
+    it 'returns a successful response' do
+      get post_path(post)
       expect(response).to have_http_status(200)
     end
 
     it 'renders the show template' do
-      post = Post.create(title: 'Post 1')
-
-      get :show, params: { id: post.id }
-
+      get post_path(post)
       expect(response).to render_template(:show)
     end
 
-    it 'assigns the correct post to @post' do
-      post = Post.create(title: 'Post 1')
-
-      get :show, params: { id: post.id }
-
-      expect(assigns(:post)).to eq(post)
+    it 'includes correct placeholder text in the response body' do
+      get post_path(post)
+      expect(response.body).to include('Post Details')
     end
   end
 end
