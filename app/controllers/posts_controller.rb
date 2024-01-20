@@ -1,12 +1,17 @@
 class PostsController < ApplicationController
   def index
-    # Retrieve all posts by the user with the specified user_id from the database
     @user = User.find(params[:user_id])
     @posts = @user.posts
+    @recent_comments = {}
+
+    @posts.each do |post|
+      @recent_comments[post.id] = post.recent_comments
+    end
   end
 
   def show
-    # Retrieve the post with the specified id from the database
     @post = Post.find(params[:id])
+    @comments = @post.comments
+    @author_name = @post.author.name
   end
 end
