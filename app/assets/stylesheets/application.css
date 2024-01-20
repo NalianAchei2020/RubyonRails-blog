@@ -44,7 +44,6 @@ body {
 
 .post-title {
   display: flex !important;
-  border: 0.5px solid #000;
   justify-content: space-around !important;
   border: none !important;
 }
