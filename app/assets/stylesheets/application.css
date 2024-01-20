@@ -25,6 +25,7 @@ body {
 
 .user-link {
   text-decoration: none;
+  border: 0.5px solid #000;
   color: black;
 }
 
@@ -43,6 +44,7 @@ body {
 
 .post-title {
   display: flex !important;
+  border: 0.5px solid #000;
   justify-content: space-around !important;
   border: none !important;
 }
@@ -105,4 +107,11 @@ body {
   padding: 0.5rem;
   background: grey;
   border: 0.5px solid #000;
+}
+
+/* forms */
+.create-post form {
+  display: flex;
+  align-items: center;
+  gap: 4vw;
 }
